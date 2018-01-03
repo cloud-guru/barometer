@@ -25,7 +25,7 @@ include ../package-list.mk
 WORK_DIR = qpid-proton
 TAG_DONE_FLAG = $(WORK_DIR)/.$(QPID_TAG).done
 CONFIG_CMD =
-CONFIG_CMD += ./configure
+#CONFIG_CMD += ./configure
 CONFIG_CMD += --prefix=/usr
 
 .PHONY: install force_install force_make
@@ -40,11 +40,12 @@ INSTALL_TARGET = force_install force_make
 
 force_make: $(WORK_DIR)
 	$(AT)cd $(WORK_DIR); git checkout -b $(QPID_TAG) $(QPID_TAG); $(CONFIG_CMD); cd -
-	$(AT)$(MAKE) -C $(WORK_DIR)
+	$(AT)mkdir $(WORK_DIR)/build
+	$(AT)$(MAKE) -C $(WORK_DIR)/build/..
 	@echo "Make done"
 
 force_install:
-	$(AT)sudo $(MAKE) -C $(WORK_DIR) install
+	$(AT)sudo $(MAKE) -C $(WORK_DIR)/build install
 
 install: $(INSTALL_TARGET)
 
