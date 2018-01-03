@@ -42,9 +42,9 @@ force_make: $(WORK_DIR)
 	$(AT)sudo yum install -y openssl-devel
 	$(AT)sudo yum install -y cyrus-sasl-devel
 	$(AT)sudo yum install -y swig
-	$(AT)cd $(WORK_DIR); git checkout -b $(QPID_PROTON_URL) $(QPID_TAG)
 	$(AT)mkdir $(WORK_DIR)/build
-	$(AT)cd $WORK_DIR)/build && $(MAKE) -C .. -DCMAKE_INSTALL_PREFIX=/usr
+	$(AT)cd $(WORK_DIR); git checkout -b $(QPID_TAG) $(QPID_TAG); $(CONFIG_CMD); cd -
+	$(AT)$(MAKE) -C $(WORK_DIR)/build/..
 	@echo "Make done"
 
 force_install:
