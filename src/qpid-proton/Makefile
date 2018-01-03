@@ -43,8 +43,8 @@ force_make: $(WORK_DIR)
 	$(AT)sudo yum install -y cyrus-sasl-devel
 	$(AT)sudo yum install -y swig
 	$(AT)cd $(WORK_DIR); git checkout -b $(QPID_PROTON_URL) $(QPID_TAG)
- 	$(AT)mkdir $(WORK_DIR)/build
-	$(AT)$(MAKE) -C $(WORK_DIR)/build/..
+	$(AT)mkdir $(WORK_DIR)/build
+	$(AT)cd $WORK_DIR)/build && $(MAKE) -C .. -DCMAKE_INSTALL_PREFIX=/usr
 	@echo "Make done"
 
 force_install:
