@@ -65,6 +65,10 @@ config $(WORK_DIR)/Makefile: $(WORK_DIR)/configure
 force_make: $(WORK_DIR)/Makefile
 	$(AT)cd $(WORK_DIR) && git pull $(COLLECTD_URL) $(COLLECTD_TAG)
 	@echo "git pull done"
+        curl -L $(COLLECTD_AMQP1_PATCH_URL) > /tmp/2618.patch
+        @echo "download AMQP1 patch"
+        $(AT)cd $(WORK_DIR)  && git apply /tmp/2618.patch
+        @echo "Apllied AMQP1 patch"
 	$(AT) $(MAKE) -C $(WORK_DIR) $(MORE_MAKE_FLAGS)
 	@echo "Make done"
 
