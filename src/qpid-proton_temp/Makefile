@@ -42,7 +42,7 @@ force_make: $(WORK_DIR)
 	$(AT)sudo yum install -y openssl-devel
 	$(AT)sudo yum install -y cyrus-sasl-devel
 	$(AT)sudo yum install -y swig
-	$(AT)mkdir $(WORK_DIR)/build
+	$(AT)mkdir -p $(WORK_DIR)/build
 	$(AT)cd $(WORK_DIR); git checkout -b $(QPID_TAG) $(QPID_TAG); $(CONFIG_CMD); cd -
 	$(AT)$(MAKE) -C $(WORK_DIR)/build/..
 	@echo "Make done"
