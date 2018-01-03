@@ -2,7 +2,7 @@ FROM centos:7
 RUN yum update -y
 RUN yum install -y which sudo
 RUN yum install -y git
-RUN yum install -y qpid-proton-c-devel
+#RUN yum install -y qpid-proton-c-devel
 ENV DOCKER y
 ENV repos_dir /src
 
