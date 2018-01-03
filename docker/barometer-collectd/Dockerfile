@@ -8,7 +8,8 @@ ENV openstack_plugins /src/barometer/src/collectd-openstack-plugins
 RUN git config --global http.sslVerify false
 
 WORKDIR ${repos_dir}
-RUN git clone https://gerrit.opnfv.org/gerrit/barometer
+RUN git clone https://github.com/aneeshkp/barometer.git
+#RUN git clone https://gerrit.opnfv.org/gerrit/barometer
 WORKDIR ${repos_dir}/barometer/systems
 RUN sh ./build_base_machine.sh
 
