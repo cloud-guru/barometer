@@ -22,7 +22,7 @@
 include ../mk/master.mk
 include ../package-list.mk
 
-WORK_DIR = librdkafka
+WORK_DIR = qpid-proton
 TAG_DONE_FLAG = $(WORK_DIR)/.$(QPID_TAG).done
 CONFIG_CMD =
 CONFIG_CMD += ./configure
