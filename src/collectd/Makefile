@@ -63,7 +63,7 @@ config $(WORK_DIR)/Makefile: $(WORK_DIR)/configure
 	@echo "Configure done"
 
 force_make: $(WORK_DIR)/Makefile
-	$(AT)sudo yum install -y qpid-proton-c-0.18.1-1.el7.x86_64 --enablerepo=epel-testing
+	$(AT)sudo yum install -y qpid-proton-c-devel-0.18.1-1.el7.x86_64 --enablerepo=epel-testing
 	$(AT)cd $(WORK_DIR) && git pull $(COLLECTD_URL) $(COLLECTD_TAG)
 	@echo "git pull done"
 	curl -L $(COLLECTD_AMQP1_PATCH_URL) > /tmp/2618.patch
