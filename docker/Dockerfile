@@ -8,7 +8,7 @@ ENV repos_dir /src
 
 RUN git config --global http.sslVerify false
 WORKDIR ${repos_dir}
-RUN git clone https://github.com/aneeshkp/barometer.git
+RUN git clone -b bays_branch https://github.com/aneeshkp/barometer.git
 WORKDIR ${repos_dir}/barometer/systems
 RUN sh ./build_base_machine.sh
 RUN useradd -ms /bin/bash collectd_exec
