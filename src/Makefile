@@ -20,7 +20,6 @@
 #   Aihua Li, Huawei Technologies.
 #   Maryam Tahhan, Intel Corporation.
 
-
 all clean distclean: subbuilds
 
 

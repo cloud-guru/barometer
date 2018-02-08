@@ -26,7 +26,6 @@ yum -y update
 # For collectd
 yum install -y yum-utils
 yum install -y epel-release
-yum install -y qpid-proton-c-devel-0.18.1-1.el7.x86_64
 yum-builddep -y collectd
 
 # Install required packages
