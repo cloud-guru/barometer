@@ -20,7 +20,10 @@
 #   Aihua Li, Huawei Technologies.
 #   Maryam Tahhan, Intel Corporation.
 
+$(AT)sudo yum install -y qpid-proton-c-devel-0.18.1-1.el7.x86_64
+
 all clean distclean: subbuilds
+
 
 subbuilds: $(SUBBUILDS)
 $(SUBBUILDS):
