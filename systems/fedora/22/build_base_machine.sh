@@ -35,6 +35,7 @@ kernel-modules-extra
 pixman-devel
 openssl-devel
 net-snmp-devel
+qpid-proton-c-devel-0.18.1-1.el7.x86_64
 
 # tools
 curl
