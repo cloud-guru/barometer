@@ -2,7 +2,7 @@ FROM centos:7
 RUN yum update -y
 RUN yum install -y which sudo
 RUN yum install -y git
-#RUN yum install -y qpid-proton-c-0.18.1-1.el7.x86_64 --enablerepo=epel-testing
+RUN yum install -y qpid-proton-c-0.18.1-1.el7.x86_64
 ENV DOCKER y
 ENV repos_dir /src
 
