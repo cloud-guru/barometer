@@ -110,7 +110,7 @@ sanity:
 # boot collectd is the process to produce the script 'configure'
 boot $(WORK_DIR)/configure:
 	@echo "booting up collectd"
-	$(AT)sudo yum install -y qpid-proton-c-devel-0.18.1-1.el7.x86_64
+	$(AT)sudo yum install -y qpid-proton-c-devel-0.28.0-1.el7.x86_64
 	$(AT)cd $(WORK_DIR); $(BUILD_CMD)
 	@echo "done booting collectd"
 
